@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{%url 'home'%}">Home</a> |
+    <a href="{%url 'create_f'%}">Create</a> |
+
+<h1>Edit-Page</h1>
+<form action="{%url 'update_f' id=obj.id%}" method="post">
+    {% csrf_token %}
+    <input name="book_name" value="{{obj.name}}" placeholder="book name" type="text">
+    <input name="a_name" placeholder="a_name" type="text" value="{{obj.a_name}}">
+    <input name="price" placeholder="price" value="{{obj.price}}" type="text">
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
